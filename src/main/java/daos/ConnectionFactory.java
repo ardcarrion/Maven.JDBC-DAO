@@ -25,12 +25,5 @@ public class ConnectionFactory {
 
     public static void main(String[] args) {
         YarnDAO dao = new YarnDAO();
-//        dao.create(new YarnLabel("wool", "acrylic", YarnLabel.Ply.FOUR, YarnLabel.Weight.ARAN, "red"));
-//        YarnLabel label = dao.findById(16);
-//        System.out.println(label);
-//        label.setColor("red");
-//        dao.update(label);
-//        System.out.println(label);
-        dao.delete(16);
     }
 }

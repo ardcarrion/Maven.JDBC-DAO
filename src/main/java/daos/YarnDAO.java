@@ -15,7 +15,7 @@ public class YarnDAO implements DAOInterface<YarnLabel> {
             ResultSet rs = statement.executeQuery("SELECT * FROM yarn.label WHERE id="+ id);
             if (rs.next()) {
                 return getLabel(rs);
-            }
+            } else throw new SQLException();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -34,11 +34,11 @@ public class YarnDAO implements DAOInterface<YarnLabel> {
     }
 
     @Override
-    public List findALL() {
+    public List findAll() {
         Connection connection = ConnectionFactory.getConnection();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM yarn");
+            ResultSet rs = statement.executeQuery("SELECT * FROM yarn.label");
             ArrayList<YarnLabel> labels = new ArrayList<>();
             while (rs.next()) {
                 YarnLabel label = getLabel(rs);
