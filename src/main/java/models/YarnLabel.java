@@ -2,6 +2,18 @@ package models;
 
 public class YarnLabel implements RetrieveId {
 
+    @Override
+    public String toString() {
+        return "YarnLabel{" +
+                "id=" + id +
+                ", primaryFiber='" + primaryFiber + '\'' +
+                ", secondaryFiber='" + secondaryFiber + '\'' +
+                ", ply=" + ply +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
     public enum Ply { SINGLE, DOUBLE, FOUR, EIGHT}
     public enum Weight {THREAD, LACE, SOCK, SPORT, DK, WORSTED, ARAN, BULKY}
 
